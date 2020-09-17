@@ -2,7 +2,11 @@ import SwiftUI
 
 struct BookView: View {
     @State private var selected = 0
-    private let pages = [Page()]
+    private let pages = [
+        Page(title: "The Forest Book"),
+        Page(scene: "scene_01", characters: [.init(image: "red_panda_01", offset: .init(width: -70, height: 200))]),
+        Page(scene: "scene_02", characters: [.init(image: "lu_02", offset: .init(width: -450, height: 150))]),
+        Page(scene: "scene_03", characters: [])]
     
     var body: some View {
         TabView(selection: $selected) {
