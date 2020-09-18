@@ -27,6 +27,10 @@ struct Title: View {
             withAnimation(.easeInOut(duration: 1.5)) {
                 alpha = 1
             }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                tab += 1
+            }
         } else {
             alpha = 0
         }
