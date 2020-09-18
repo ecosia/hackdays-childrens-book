@@ -1,7 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-struct Scene02: View {
+struct Scene03: View {
     let index: Int
     @Binding var tab: Int
     @Binding var sound: AVAudioPlayer!
@@ -10,14 +10,14 @@ struct Scene02: View {
     
     var body: some View {
         ZStack {
-            Image("scene_02")
+            Image("scene_03")
                 .resizable()
                 .scaledToFit()
-            Image("chainsaw_guy_01")
-                .offset(x: 200, y: 70)
+            Image("elephant_01")
+                .offset(x: 80, y: -220)
                 .opacity(chainAlpha)
-            Image("lu_02")
-                .offset(x: -350, y: 150)
+            Image("lu_03")
+                .offset(x: -70, y: 100)
                 .opacity(luAlpha)
         }.onAppear(perform: update)
         .onChange(of: tab) { _ in
@@ -28,18 +28,17 @@ struct Scene02: View {
     private func update() {
         if tab == index {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                sound = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "chainshaw_guy_01.m4a", ofType: nil)!))
-                sound.play()
-                withAnimation(.easeInOut(duration: 1)) {
-                    chainAlpha = 1
-                }
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                sound = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "lu_02.m4a", ofType: nil)!))
+                sound = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "lu_03.m4a", ofType: nil)!))
                 sound.play()
                 withAnimation(.easeInOut(duration: 1)) {
                     luAlpha = 1
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                sound = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "elephant_01.m4a", ofType: nil)!))
+                sound.play()
+                withAnimation(.easeInOut(duration: 1)) {
+                    chainAlpha = 1
                 }
             }
             

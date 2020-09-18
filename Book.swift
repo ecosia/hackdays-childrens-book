@@ -13,6 +13,8 @@ struct Book: View {
                 .tag(1)
             Scene02(index: 2, tab: $selected, sound: $sound)
                 .tag(2)
+            Scene03(index: 3, tab: $selected, sound: $sound)
+                .tag(3)
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .onAppear {
             sound = AVAudioPlayer()

@@ -29,7 +29,7 @@ struct Title: View {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                tab += 1
+//                tab += 1
             }
         } else {
             alpha = 0
